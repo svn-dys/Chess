@@ -2,12 +2,19 @@
 #include "SDL.h"
 
 namespace Chess {
+	static SDL_Window* gWindow;
+	static SDL_Renderer* gRenderer;
+
 	class InitChess {
 	public:
-		static SDL_Window* initWindow();
-		static SDL_Renderer* initRenderer(SDL_Window* window);
+		static void initWindow();
+		static void initRenderer();
 
+
+		~InitChess();
 	private:
-		
+
 	};
+
+	
 }

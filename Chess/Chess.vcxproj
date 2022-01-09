@@ -142,10 +142,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\Board.cpp" />
     <ClCompile Include="src\Chess.cpp" />
     <ClCompile Include="src\InitChess.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\Board.h" />
     <ClInclude Include="include\InitChess.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

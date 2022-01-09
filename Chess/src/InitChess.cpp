@@ -1,11 +1,11 @@
 #include "../include/InitChess.h"
 
 
-SDL_Window* Chess::InitChess::initWindow()
+void Chess::InitChess::initWindow()
 {
-    SDL_Window* window;
-
-    window = SDL_CreateWindow(
+    SDL_Window* createdWindow;
+    
+    createdWindow = SDL_CreateWindow(
         "An SDL2 window",                  // window title
         SDL_WINDOWPOS_UNDEFINED,           // initial x position
         SDL_WINDOWPOS_UNDEFINED,           // initial y position
@@ -14,13 +14,15 @@ SDL_Window* Chess::InitChess::initWindow()
         SDL_WINDOW_OPENGL                  // flags - see below
     );
 
-    return window;
+    // assign created window to global window
+    Chess::gWindow = createdWindow;
 }
 
-SDL_Renderer* Chess::InitChess::initRenderer(SDL_Window* window)
+void Chess::InitChess::initRenderer()
 {
-    SDL_Renderer* renderer;
+    SDL_Renderer* createdRenderer;
+    createdRenderer = SDL_CreateRenderer(Chess::gWindow, -1, 0);
 
-    renderer = SDL_CreateRenderer(window, -1, 0);
-    return renderer;
+    // assign created render to global renderer
+    Chess::gRenderer = createdRenderer; 
 }
