@@ -1,10 +1,9 @@
 #pragma once
 #include "SDL.h"
+#include "InitChess.h"
 
-namespace Chess {
-	class Board {
-	public:
-		void CreateBoard();
-	private:
-	};
-}
+class Board {
+public:
+	void CreateBoard();
+private:
+};
