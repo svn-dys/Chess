@@ -2,6 +2,7 @@
 #undef main
 #include <iostream>
 #include "../include/RenderWindow.h"
+#include "../include/Entity.h"
 
 int main() 
 {
@@ -12,6 +13,8 @@ int main()
     RenderWindow window("Chess", 1280, 720);
 
     SDL_Texture* horse = window.loadTexture("sprites/horsey.png");
+
+    Entity entityHorse(100, 100, horse);
 
     bool chessRunning = true;
 
@@ -28,7 +31,7 @@ int main()
         }
 
         window.clearScreen();
-        window.render(horse);
+        window.render(entityHorse);
         window.display();
     }
 
@@ -36,13 +39,3 @@ int main()
     SDL_Quit();
     return 0;
 }
-
-
-
-//InitChess::initWindow();
-    //InitChess::initRenderer();
-    /*Board* board = new Board;
-    board->CreateBoard();
-    
-    #include "../include/Board.h"
-    */

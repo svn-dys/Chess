@@ -3,6 +3,7 @@
 
 
 RenderWindow::RenderWindow(const char* title, int w, int h)
+	:window(NULL), renderer(NULL)
 {
 	window = SDL_CreateWindow(title, SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, w, h, SDL_RENDERER_ACCELERATED);
 
@@ -32,9 +33,21 @@ void RenderWindow::clearScreen()
 	SDL_RenderClear(renderer);
 }
 
-void RenderWindow::render(SDL_Texture* texture)
+void RenderWindow::render(Entity& entity)
 {
-	SDL_RenderCopy(renderer, texture, NULL, NULL);
+	SDL_Rect src;
+	src.x = entity.getCurrentFrame().x;
+	src.y = entity.getCurrentFrame().y;
+	src.w = entity.getCurrentFrame().w;
+	src.h = entity.getCurrentFrame().h;
+
+	SDL_Rect dst;
+	dst.x = entity.getX() * 2;
+	dst.y = entity.getY() * 2;
+	dst.w = entity.getCurrentFrame().w * 2;
+	dst.h = entity.getCurrentFrame().h * 2;
+
+	SDL_RenderCopy(renderer, entity.getTexture(), &src, &dst);
 }
 
 void RenderWindow::display()
