@@ -14,7 +14,7 @@ int main()
 
     SDL_Texture* horse = window.loadTexture("sprites/horsey.png");
 
-    Entity entityHorse(100, 100, horse);
+    Entity entityHorse(Vector2f(0, 0), horse);
 
     bool chessRunning = true;
 

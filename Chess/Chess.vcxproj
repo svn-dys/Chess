@@ -144,15 +144,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\Board.cpp" />
     <ClCompile Include="src\Chess.cpp" />
     <ClCompile Include="src\Entity.cpp" />
-    <ClCompile Include="src\Globals.cpp" />
     <ClCompile Include="src\RenderWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="include\Board.h" />
     <ClInclude Include="include\Entity.h" />
+    <ClInclude Include="include\Math.h" />
     <ClInclude Include="include\RenderWindow.h" />
   </ItemGroup>
   <ItemGroup>

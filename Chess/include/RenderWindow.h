@@ -5,7 +5,6 @@
 #include "Entity.h"
 #include <iostream>
 
-
 class RenderWindow {
 public:
 	RenderWindow(const char* title, int w, int h);
